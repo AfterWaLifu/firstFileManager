@@ -216,7 +216,7 @@
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Разрешение";
+            this.columnHeader3.Text = "Тип файла";
             this.columnHeader3.Width = 94;
             // 
             // imageList1
@@ -254,11 +254,11 @@
             // columnHeader5
             // 
             this.columnHeader5.Text = "Имя";
-            this.columnHeader5.Width = 302;
+            this.columnHeader5.Width = 282;
             // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "Разрешение";
+            this.columnHeader6.Text = "Тип файла";
             this.columnHeader6.Width = 94;
             // 
             // textBox3
@@ -287,7 +287,7 @@
             this.переименоватьToolStripMenuItem,
             this.обновитьToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 158);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(162, 136);
             // 
             // toolStripMenuItem1
             // 
@@ -343,7 +343,7 @@
             // обновитьToolStripMenuItem
             // 
             this.обновитьToolStripMenuItem.Name = "обновитьToolStripMenuItem";
-            this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.обновитьToolStripMenuItem.Text = "Обновить";
             this.обновитьToolStripMenuItem.Click += new System.EventHandler(this.обновитьToolStripMenuItem_Click);
             // 

@@ -14,7 +14,7 @@ namespace MFileManager
 {
     public partial class Form1 : Form
     {
-        //==========================Поля===========================================
+        #region Поля
         FormFileCreation ffc = new FormFileCreation();
         FormDirectoryCreation fdc = new FormDirectoryCreation();
         FormRename fr = new FormRename();
@@ -23,7 +23,8 @@ namespace MFileManager
         string[] buffer = new string[1] { ""};
         string toMoveAdress = "";
         Random r = new Random();
-        //=========================Методы==========================================
+        #endregion
+
         public Form1()
         {
             InitializeComponent();
@@ -36,9 +37,12 @@ namespace MFileManager
             listView1.ContextMenuStrip = contextMenuStrip1;
             listView2.ContextMenuStrip = contextMenuStrip1;
             fillingDiskLists();
+            this.ActiveControl = listView1;
         }
-        //====================Элеменыты на форме===================================
-        //========Поиск========
+
+        #region Элементы формы
+
+        #region Поиск
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             search(true, textBox1.Text);
@@ -63,7 +67,9 @@ namespace MFileManager
             }
             catch { }
         }
-        //=======Панель========
+        #endregion
+
+        #region Панель
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             if (ActiveControl == listView1)
@@ -155,7 +161,9 @@ namespace MFileManager
             fillingFilesAndDirectories(Path1, true);
             fillingFilesAndDirectories(Path2, false);
         }
-        //======Диски==========
+        #endregion
+
+        #region Выбор диска
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string path = comboBox1.SelectedItem.ToString();
@@ -170,7 +178,9 @@ namespace MFileManager
             fillingFilesAndDirectories(path, false);
             textBox4.Text = Path2;
         }
-        //======Переходы=======
+        #endregion
+
+        #region Переходы по папкам
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             string testForExtantion = listView1.SelectedItems[0].SubItems[2].Text;
@@ -217,7 +227,11 @@ namespace MFileManager
                 }
             }
         }
-        //====================Самостоятельные методы==================================
+        #endregion
+
+        #endregion
+
+        #region Методы бэкенда
         private void fillingDiskLists()
         {
             DriveInfo[] drives = DriveInfo.GetDrives();
@@ -594,5 +608,6 @@ namespace MFileManager
                 }
             }
         }
+        #endregion
     }
 }
