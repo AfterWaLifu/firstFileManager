@@ -239,10 +239,17 @@ namespace MFileManager
             {
                 comboBox1.Items.Add(drive);
                 comboBox2.Items.Add(drive);
-                comboBox1.Items[comboBox1.Items.Count - 1] += $" {drive.VolumeLabel} " +
-                    $"{(drive.TotalSize-drive.TotalFreeSpace)/1073741824 }/{drive.TotalSize/ 1073741824} ГБайт";
-                comboBox2.Items[comboBox2.Items.Count - 1] += $" {drive.VolumeLabel} " +
+                try
+                {
+                    comboBox1.Items[comboBox1.Items.Count - 1] += $" {drive.VolumeLabel} " +
                     $"{(drive.TotalSize - drive.TotalFreeSpace) / 1073741824 }/{drive.TotalSize / 1073741824} ГБайт";
+                    comboBox2.Items[comboBox2.Items.Count - 1] += $" {drive.VolumeLabel} " +
+                        $"{(drive.TotalSize - drive.TotalFreeSpace) / 1073741824 }/{drive.TotalSize / 1073741824} ГБайт";
+                }
+                catch
+                {
+                    MessageBox.Show("Один или несколько из дисков недоступны");
+                }
             }
             comboBox1.SelectedIndex = 0;
             if (comboBox2.Items.Count > 1) comboBox2.SelectedIndex = 1;
